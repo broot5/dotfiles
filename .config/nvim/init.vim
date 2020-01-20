@@ -1,8 +1,10 @@
 call plug#begin('~/.local/share/nvim/plugged')
 " Editor
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-syntastic/syntastic'
 Plug 'itchyny/lightline.vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'airblade/vim-gitgutter'
 
 " Theme
 Plug 'gruvbox-community/gruvbox'
@@ -25,6 +27,16 @@ colorscheme gruvbox
 
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
+
+" Syntastic setting
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Always On Better Rainbow Parentheses
 au VimEnter * RainbowParenthesesToggle
@@ -72,6 +84,10 @@ nnoremap <leader>n :tabnew<CR>
 nnoremap <leader>x :tabclose<CR>
 nnoremap <leader>h <C-PageUp>
 nnoremap <leader>l <C-PageDown>
+
+" <F5> to insert now time
+nnoremap <F5> "=strftime("%c")<CR>P
+inoremap <F5> <C-R>=strftime("%c")<CR>
 
 " Set indentLine
 let g:indentLine_char = '¦'
