@@ -1,0 +1,37 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["custom/spotify","tray", "clock"],
+
+    "sway/workspaces": {
+        "format": " {icon} {name} ",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "10": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "custom/spotify": {
+        "interval": 1,
+        "format": " {}",
+        "max-length": 100,
+        "exec": "~/.config/waybar/modules/mediaplayer.sh",
+        "exec-if": "pgrep spotify",
+        "escape": true
+    }
+}

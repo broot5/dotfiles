@@ -1,0 +1,74 @@
+* {
+    border-radius: 0;
+    font-family: BlexMonoNerdFontComplete, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(40, 40, 40, 1);
+    color: #ebdbb2;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #ebdbb2;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inherit;
+    border-bottom: 3px solid #ebdbb2;
+}
+
+#workspaces button.focused {
+    background-color: #665c54;
+    border-bottom: 3px solid #ebdbb2;
+}
+
+#workspaces button.urgent {
+    background-color: #cc241d;
+}
+
+#mode {
+    background-color: #504945;
+    border-bottom: 3px solid #ebdbb2;
+}
+
+#clock,
+#tray,
+#mode,
+#custom-spotify {
+    padding: 0 10px;
+    margin: 0 4px;
+    color: #ebdbb2;
+}
+
+#clock {
+    background-color: #504945;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ebdbb2;
+        color: #282828;
+    }
+}
+
+label:focus {
+    background-color: #282828;
+}
+
+#tray {
+    background-color: #458588;
+}
+
+
