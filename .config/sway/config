@@ -24,7 +24,7 @@ for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg ~/bg/vincentiu-solomon-Z4wF0h47fy8-unsplash.jpg fill
+output * bg ~/bg/willian-justen-de-vasconcellos-T_Qe4QlMIvQ-unsplash.jpg fill
 #
 # Example configuration:
 #
@@ -215,7 +215,7 @@ gaps inner 10
 
 # Auto start
 exec pacmd set-sink-volume 0 0x10000
-exec redshift -m wayland -l 36:128
+exec redshift -m wayland -l 36:128 -t 4500:3500
 exec export GTK_IM_MODULE=uim \
      export QT_IM_MODULE=uim \
      eim-xim & \

@@ -10,8 +10,3 @@ export EDITOR=nvim
 alias ls="exa"
 alias sd="shutdown -h now"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /home/broot/anaconda3/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
-
