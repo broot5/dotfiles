@@ -46,10 +46,11 @@ window#waybar.hidden {
 #clock,
 #tray,
 #mode,
-#custom-spotify {
+#pulseaudio {
     padding: 0 10px;
     margin: 0 4px;
     color: #ebdbb2;
+    background-color: #98971a;
 }
 
 #clock {
@@ -63,12 +64,7 @@ window#waybar.hidden {
     }
 }
 
-label:focus {
-    background-color: #282828;
-}
-
 #tray {
     background-color: #458588;
 }
-
 

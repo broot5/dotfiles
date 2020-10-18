@@ -36,11 +36,11 @@ output eDP-1 disable
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' \
-#               resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
+ exec swayidle -w \
+    timeout 300 'swaylock -f -c 000000' \
+    timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -214,5 +214,7 @@ default_border none
 gaps inner 10
 
 # Auto start
+exec kdeconnect-indicator
 exec pacmd set-sink-volume 0 0x10000
 exec_always ~/.config/waybar/waybar.sh
+exec mako --font 'Blex Mono Nerd Font' --background-color '#282828' --text-color '#ebdbb2' --border-size 10 --border-color '#458588' --default-timeout 10000
