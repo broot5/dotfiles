@@ -102,7 +102,6 @@ set autoindent
 set autoread
 set background=dark
 set cindent
-"set cmdheight=2
 set cursorline
 set expandtab
 set hidden

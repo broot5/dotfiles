@@ -23,14 +23,14 @@ for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg ~/bg/willian-justen-de-vasconcellos-T_Qe4QlMIvQ-unsplash.jpg fill
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+output eDP-1 disable
 
 ### Idle configuration
 #
@@ -215,9 +215,4 @@ gaps inner 10
 
 # Auto start
 exec pacmd set-sink-volume 0 0x10000
-exec redshift -m wayland -l 36:128 -t 4500:3500
-exec export GTK_IM_MODULE=uim \
-     export QT_IM_MODULE=uim \
-     eim-xim & \
-     export XMODIFIERS=@im=uim
 exec_always ~/.config/waybar/waybar.sh

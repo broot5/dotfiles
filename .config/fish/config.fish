@@ -7,6 +7,6 @@ export PATH="$PATH:'yarn global bin'"
 export MOZ_ENABLE_WAYLAND=1
 export EDITOR=nvim
 
-alias ls="exa"
-alias sd="shutdown -h now"
+alias ls="lsd"
+alias sd="shutdown now"
 

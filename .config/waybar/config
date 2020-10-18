@@ -3,15 +3,15 @@
     "position": "bottom",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/spotify","tray", "clock"],
+    "modules-right": ["pulseaudio", "tray", "clock"],
 
     "sway/workspaces": {
         "format": " {icon} {name} ",
         "format-icons": {
-            "1": "",
+            "1": "爵",
             "2": "",
             "3": "",
-            "4": "",
+            "4": "",
             "5": "",
             "10": "",
             "focused": "",
@@ -26,12 +26,20 @@
         "tooltip-format": "{:%Y-%m-%d | %H:%M}",
         "format-alt": "{:%Y-%m-%d}"
     },
-    "custom/spotify": {
-        "interval": 1,
-        "format": " {}",
-        "max-length": 100,
-        "exec": "~/.config/waybar/modules/mediaplayer.sh",
-        "exec-if": "pgrep spotify",
-        "escape": true
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol"
     }
 }
