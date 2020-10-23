@@ -214,6 +214,7 @@ default_border none
 gaps inner 10
 
 # Auto start
+exec ~/wallpaper/wallpaper.sh
 exec kdeconnect-indicator
 exec pacmd set-sink-volume 0 0x10000
 exec_always ~/.config/waybar/waybar.sh
