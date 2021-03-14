@@ -3,8 +3,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-syntastic/syntastic'
 Plug 'itchyny/lightline.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Theme
 Plug 'gruvbox-community/gruvbox'
@@ -12,6 +14,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/limelight.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'roman/golden-ratio'
 
 " Lang
@@ -27,6 +30,13 @@ colorscheme gruvbox
 
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
+let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
+let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+let g:lightline.component_type   = {'buffers': 'tabsel'}
+let g:lightline.component_raw = {'buffers': 1}
+
+
+let g:lightline#bufferline#clickable = 1
 
 " Syntastic setting
 set statusline+=%#warningmsg#
@@ -73,6 +83,9 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Set Leader key to Space
 map <Space> <leader>
 
+" Set Ctrl + @ to copy
+nnoremap <C-@> :call system("wl-copy", @")<CR>
+
 " Set windmove
 nnoremap <C-h> <C-W>h
 nnoremap <C-j> <C-W>j
@@ -88,6 +101,9 @@ nnoremap <leader>l <C-PageDown>
 " <F5> to insert now time
 nnoremap <F5> "=strftime("%c")<CR>P
 inoremap <F5> <C-R>=strftime("%c")<CR>
+
+" <C-p> to FZF
+nnoremap <C-p> :FZF<Cr>
 
 " Set indentLine
 let g:indentLine_char = '¦'
@@ -115,6 +131,7 @@ set number
 set ruler
 set shiftwidth=4
 set showmatch
+set showtabline=2
 set signcolumn=yes
 set smartcase
 set smartindent
